@@ -18,7 +18,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Assets not in this repo
+
+`public/interior/` is gitignored and will be missing after a fresh clone. It
+holds three JPEG renders — `dining-hall.jpg`, `shopfront.jpg` and
+`feature-wall.jpg` — used by the "Inside the bistro" section on the home page.
+
+They are artwork from the Aaron Designs interior fit-out proposal and are kept
+out of version control until we have permission to publish them. The build
+succeeds without them; the section just renders with empty figures. Drop the
+files into `public/interior/` to see it complete.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to load Inter and Playfair Display.
 
 ## Learn More
 

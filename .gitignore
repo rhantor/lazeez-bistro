@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# interior renders from the Aaron Designs fit-out proposal
+# licensed artwork, kept out of version control pending permission to publish
+/public/interior/

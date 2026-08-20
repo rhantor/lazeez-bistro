@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
+/*
+ * Brand palette taken from "Lazeez Bistro 26-logo.ai".
+ *   deep green  #004125  (CMYK 100/55/100/45)
+ *   gold        #9b8235  (CMYK  20/30/ 85/30)
+ *   pale sand   #cdc19a  (ornate ring tint)
+ * The site runs dark, so the deep green becomes the ground rather than the ink.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-green: #004125;
+  --brand-gold: #9b8235;
+  --brand-sand: #cdc19a;
+
+  --background: #00190f;
+  --surface: #04281a;
+  --surface-hover: #0a3523;
+  --border: #0f3d28;
+  --foreground: #f2ede1;
+  --muted: #a9a184;
+  --accent: #9b8235;
+  --accent-bright: #c2a24a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-brand-green: var(--brand-green);
+  --color-brand-sand: var(--brand-sand);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Warm lantern glow: gold from above, brand green pooling below. */
+.ambient-glow {
+  background:
+    radial-gradient(
+      55% 45% at 50% 0%,
+      color-mix(in oklab, var(--brand-gold) 22%, transparent) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 45% at 15% 100%,
+      color-mix(in oklab, var(--brand-green) 55%, transparent) 0%,
+      transparent 70%
+    );
+}
+
+/* Elements GSAP animates in start hidden so there is no flash of layout. */
+.gsap-hidden {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-hidden {
+    opacity: 1;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
 }
