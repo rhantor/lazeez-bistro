@@ -14,7 +14,7 @@ import {
 
 const HEADLINE = "Coming Soon";
 
-export default function ComingSoon() {
+export default function ComingSoon({ showScrollCue = false }) {
   const root = useRef(null);
 
   useGSAP(
@@ -119,10 +119,12 @@ export default function ComingSoon() {
         </p>
       </div>
 
-      <span
-        aria-hidden="true"
-        className="js-foot gsap-hidden absolute bottom-8 left-1/2 h-10 w-px -translate-x-1/2 bg-gradient-to-b from-transparent to-accent/70"
-      />
+      {showScrollCue ? (
+        <span
+          aria-hidden="true"
+          className="js-foot gsap-hidden absolute bottom-8 left-1/2 h-10 w-px -translate-x-1/2 bg-gradient-to-b from-transparent to-accent/70"
+        />
+      ) : null}
     </section>
   );
 }
