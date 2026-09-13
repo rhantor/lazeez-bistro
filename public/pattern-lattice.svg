@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <!--
+    Seamless Islamic eight-point star (khatam) lattice, drawn as two overlapping
+    squares per star. A star sits at the tile centre and at all four corners;
+    each corner star is clipped to this tile, and the four tiles meeting at that
+    corner each contribute a quarter, so the pattern repeats without a seam.
+    Colour is the menu's gold — set the opacity on the element that uses it.
+  -->
+  <g fill="none" stroke="#c9a24a" stroke-width="1">
+    <!-- centre star -->
+    <rect x="18" y="18" width="44" height="44" />
+    <polygon points="40,8.89 71.11,40 40,71.11 8.89,40" />
+
+    <!-- corner stars (clipped by the tile edges) -->
+    <rect x="-22" y="-22" width="44" height="44" />
+    <polygon points="0,-31.11 31.11,0 0,31.11 -31.11,0" />
+
+    <rect x="58" y="-22" width="44" height="44" />
+    <polygon points="80,-31.11 111.11,0 80,31.11 48.89,0" />
+
+    <rect x="-22" y="58" width="44" height="44" />
+    <polygon points="0,48.89 31.11,80 0,111.11 -31.11,80" />
+
+    <rect x="58" y="58" width="44" height="44" />
+    <polygon points="80,48.89 111.11,80 80,111.11 48.89,80" />
+  </g>
+</svg>
