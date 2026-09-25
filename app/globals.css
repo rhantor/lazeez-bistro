@@ -68,6 +68,27 @@
  */
 html {
   overflow-x: clip;
+
+  /*
+   * The home page's in-page links ("Visit" in the header, "Back to top" in the
+   * footer) glide rather than jump. Behind a media query because a smooth
+   * scroll is motion the visitor did not ask for.
+   */
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* The home page header is fixed, so the section its nav jumps to has to stop
+   clear of the bar rather than underneath it. Targeted at that one anchor
+   rather than every [id] on the site: /menu positions its own scroll target
+   and should keep doing so. */
+#visit {
+  scroll-margin-top: 5.5rem;
 }
 
 body {

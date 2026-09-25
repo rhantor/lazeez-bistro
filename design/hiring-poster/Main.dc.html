@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #00190f;
+      font-family: Inter, system-ui, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #c2a24a; text-decoration: none; }
+    a:hover { color: #cdc19a; }
+    .lb-bullet {
+      flex: none;
+      width: 6px;
+      height: 6px;
+      margin-top: 9px;
+      background: #9b8235;
+      transform: rotate(45deg);
+    }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1080px; overflow: hidden; background: #00190f;">
+
+  <!-- Moorish lattice ground and lantern glow, both kept very quiet -->
+  <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(155,130,53,0.07) 0 1px, transparent 1px 64px), repeating-linear-gradient(-45deg, rgba(155,130,53,0.07) 0 1px, transparent 1px 64px);"></div>
+  <div style="position: absolute; inset: 0; background-image: radial-gradient(60% 22% at 50% 0%, rgba(155,130,53,0.20) 0%, transparent 70%), radial-gradient(70% 26% at 50% 100%, rgba(0,65,37,0.75) 0%, transparent 70%);"></div>
+
+  <div style="position: relative; display: flex; flex-direction: column;">
+
+    <!-- ============ MASTHEAD ============ -->
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 72px 88px 0;">
+
+      <img src="logo-primary-light.svg" alt="Lazeez Bistro" style="width: 176px; height: auto; display: block;">
+
+      <h1 style="margin: 34px 0 0; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; font-weight: 900; font-size: 94px; line-height: 1; letter-spacing: -0.01em; color: #f2ede1; text-align: center;">We Are Hiring</h1>
+
+      <p style="margin: 18px 0 0; font-size: 21px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #cdc19a; text-align: center;">Join our team &amp; grow with us</p>
+
+      <div style="display: flex; align-items: center; gap: 16px; width: 100%; margin-top: 30px;">
+        <span style="flex: 1; height: 2px; background: linear-gradient(to right, rgba(155,130,53,0) 0%, rgba(155,130,53,0.8) 55%, #c2a24a 100%);"></span>
+        <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true" style="flex: none; display: block;"><path d="M7 0.6 13.4 7 7 13.4 0.6 7Z" fill="#c2a24a"></path></svg>
+        <span style="flex: 1; height: 2px; background: linear-gradient(to left, rgba(155,130,53,0) 0%, rgba(155,130,53,0.8) 55%, #c2a24a 100%);"></span>
+      </div>
+
+      <!-- salary lockup -->
+      <div style="width: 100%; margin-top: 30px; padding: 2px; background: linear-gradient(160deg, #c2a24a 0%, #9b8235 55%, #4d431f 100%); clip-path: polygon(34px 0, calc(100% - 34px) 0, 100% 34px, 100% calc(100% - 34px), calc(100% - 34px) 100%, 34px 100%, 0 calc(100% - 34px), 0 34px);">
+        <div style="padding: 30px 40px 34px; text-align: center; background: #04281a; clip-path: polygon(33px 0, calc(100% - 33px) 0, 100% 33px, 100% calc(100% - 33px), calc(100% - 33px) 100%, 33px 100%, 0 calc(100% - 33px), 0 33px);">
+          <p style="margin: 0; font-size: 18px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #a9a184;">Salary starts from</p>
+          <p style="margin: 10px 0 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 72px; line-height: 1; color: #c2a24a;">RM2,000++</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ROLES ============ -->
+    <div style="display: flex; flex-direction: column; gap: 46px; padding: 56px 88px 0;">
+
+      <!-- KITCHEN MEMBER -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 104px; height: 104px; border-radius: 50%; border: 2px solid #9b8235; background: #04281a; box-shadow: 0 0 0 6px rgba(155,130,53,0.14);">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15a4 4 0 0 1-1.6-7.66A4 4 0 0 1 12 5.5a4 4 0 0 1 7.6 1.84A4 4 0 0 1 18 15Z"></path><path d="M6 15v4.5h12V15"></path><path d="M9 18.5h6"></path></svg>
+          </div>
+          <span style="margin-top: -11px; padding: 5px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00190f; background: #c2a24a; border-radius: 999px;">Full time</span>
+        </div>
+
+        <h2 style="margin: 16px 0 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 46px; line-height: 1.1; color: #f2ede1; text-align: center;">Kitchen Member</h2>
+        <p style="margin: 6px 0 0; font-size: 18px; color: #a9a184; text-align: center;">Hardworking &middot; Team player</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; width: 100%; margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="align-self: flex-start; padding: 7px 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00190f; background: #9b8235; border-radius: 4px;">Responsibilities</span>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Assist in food preparation and cooking</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Maintain food quality and cleanliness</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Follow kitchen standards and recipes</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Support other kitchen tasks as required</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="align-self: flex-start; padding: 7px 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00190f; background: #9b8235; border-radius: 4px;">Requirements</span>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Hardworking and willing to learn</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Good hygiene practices</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Able to work in a team</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Experience preferred, not required</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+        <span style="flex: 1; height: 2px; background: linear-gradient(to right, rgba(155,130,53,0) 0%, rgba(155,130,53,0.55) 55%, rgba(155,130,53,0.95) 100%);"></span>
+        <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true" style="flex: none; display: block;"><path d="M7 0.6 13.4 7 7 13.4 0.6 7Z" fill="#9b8235"></path></svg>
+        <span style="flex: 1; height: 2px; background: linear-gradient(to left, rgba(155,130,53,0) 0%, rgba(155,130,53,0.55) 55%, rgba(155,130,53,0.95) 100%);"></span>
+      </div>
+
+      <!-- BARTENDER -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 104px; height: 104px; border-radius: 50%; border: 2px solid #9b8235; background: #04281a; box-shadow: 0 0 0 6px rgba(155,130,53,0.14);">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.1 2.4H14.9L15.5 5H8.5Z"></path><path d="M8.4 5H15.6L16.1 7H7.9Z"></path><path d="M8.2 7H15.8L18.3 20.6H5.7Z"></path><path d="M6.9 14.2h10.2"></path></svg>
+          </div>
+          <span style="margin-top: -11px; padding: 5px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00190f; background: #c2a24a; border-radius: 999px;">Full time</span>
+        </div>
+
+        <h2 style="margin: 16px 0 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 46px; line-height: 1.1; color: #f2ede1; text-align: center;">Bartender</h2>
+        <p style="margin: 6px 0 0; font-size: 18px; color: #a9a184; text-align: center;">Quick hands &middot; Warm welcome</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; width: 100%; margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="align-self: flex-start; padding: 7px 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00190f; background: #9b8235; border-radius: 4px;">Responsibilities</span>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Prepare mocktails, fresh juices and coffee</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Keep the bar stocked, clean and organised</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Serve drinks quickly through peak hours</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Track stock and keep wastage low</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="align-self: flex-start; padding: 7px 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00190f; background: #9b8235; border-radius: 4px;">Requirements</span>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Confident with drink preparation</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Steady through a busy service</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Good hygiene practices</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Bar or barista experience a plus</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
+        <span style="flex: 1; height: 2px; background: linear-gradient(to right, rgba(155,130,53,0) 0%, rgba(155,130,53,0.55) 55%, rgba(155,130,53,0.95) 100%);"></span>
+        <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true" style="flex: none; display: block;"><path d="M7 0.6 13.4 7 7 13.4 0.6 7Z" fill="#9b8235"></path></svg>
+        <span style="flex: 1; height: 2px; background: linear-gradient(to left, rgba(155,130,53,0) 0%, rgba(155,130,53,0.55) 55%, rgba(155,130,53,0.95) 100%);"></span>
+      </div>
+
+      <!-- SERVICE CREW -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 104px; height: 104px; border-radius: 50%; border: 2px solid #9b8235; background: #04281a; box-shadow: 0 0 0 6px rgba(155,130,53,0.14);">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 17.4a7.5 7.5 0 0 1 15 0Z"></path><path d="M12 7.2V5.6"></path><circle cx="12" cy="4.4" r="1.2"></circle><path d="M2.5 20.4h19"></path></svg>
+          </div>
+          <span style="margin-top: -11px; padding: 5px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00190f; background: #c2a24a; border-radius: 999px;">Full time</span>
+        </div>
+
+        <h2 style="margin: 16px 0 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 46px; line-height: 1.1; color: #f2ede1; text-align: center;">Service Crew</h2>
+        <p style="margin: 6px 0 0; font-size: 18px; color: #a9a184; text-align: center;">Friendly &middot; Team player</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; width: 100%; margin-top: 24px;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="align-self: flex-start; padding: 7px 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00190f; background: #9b8235; border-radius: 4px;">Responsibilities</span>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Greet and serve guests warmly</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Take orders and serve food and drinks</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Keep the dining area clean and tidy</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Handle billing and payments</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <span style="align-self: flex-start; padding: 7px 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00190f; background: #9b8235; border-radius: 4px;">Requirements</span>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Friendly and customer-focused</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Good communication skills</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Able to work in a team</span></div>
+            <div style="display: flex; gap: 11px; align-items: flex-start;"><span class="lb-bullet"></span><span style="font-size: 19px; line-height: 1.45; color: #ded8c9;">Experience preferred, not required</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WE OFFER ============ -->
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 58px 88px 0;">
+      <div style="display: flex; align-items: center; gap: 22px; width: 100%;">
+        <span style="flex: 1; height: 2px; background: linear-gradient(to right, rgba(155,130,53,0) 0%, rgba(155,130,53,0.8) 55%, #c2a24a 100%);"></span>
+        <span style="flex: none; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 32px; letter-spacing: 0.06em; color: #cdc19a;">We Offer</span>
+        <span style="flex: 1; height: 2px; background: linear-gradient(to left, rgba(155,130,53,0) 0%, rgba(155,130,53,0.8) 55%, #c2a24a 100%);"></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; width: 100%; margin-top: 38px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg>
+          <p style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f2ede1; text-align: center;">EPF<br><span style="font-weight: 400; letter-spacing: 0.04em; color: #a9a184;">(KWSP)</span></p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v6c0 4.4-3.2 7.8-8 9-4.8-1.2-8-4.6-8-9V6Z"></path><path d="M9 12.2l2.1 2.1L15.5 10"></path></svg>
+          <p style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f2ede1; text-align: center;">SOCSO<br><span style="font-weight: 400; letter-spacing: 0.04em; color: #a9a184;">(PERKESO)</span></p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7.5" width="18" height="12.5" rx="2"></rect><path d="M9 7.5V5.6A1.6 1.6 0 0 1 10.6 4h2.8A1.6 1.6 0 0 1 15 5.6v1.9"></path><path d="M12 11.2v5.1"></path><path d="M9.45 13.75h5.1"></path></svg>
+          <p style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f2ede1; text-align: center;">Medical<br>Benefits</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20.6h18"></path><path d="M6.6 20.6v-4.4"></path><path d="M11 20.6v-8"></path><path d="M15.4 20.6v-11.6"></path><path d="M19.8 20.6v-15.2"></path></svg>
+          <p style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f2ede1; text-align: center;">Career<br>Growth</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <div style="margin-top: 54px; border-top: 2px solid rgba(155,130,53,0.6); background: #04281a; padding: 48px 88px 50px;">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: start;">
+
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <span style="flex: none; display: flex; align-items: center; justify-content: center; width: 62px; height: 62px; border-radius: 50%; background: #c2a24a;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="#04281a" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"></path></svg>
+          </span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <p style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #c2a24a;">Interested?</p>
+            <p style="margin: 0; font-size: 18px; color: #cdc19a;">WhatsApp or call us now</p>
+            <p style="margin: 0; font-size: 25px; font-weight: 600; color: #f2ede1;">+60 11-1119 2309</p>
+            <p style="margin: 0; font-size: 16px; color: #a9a184;">info.lazeezbistro@gmail.com</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <span style="flex: none; display: flex; align-items: center; justify-content: center; width: 62px; height: 62px; border-radius: 50%; border: 2px solid rgba(155,130,53,0.55);">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#c2a24a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"></path><circle cx="12" cy="10.2" r="2.6"></circle></svg>
+          </span>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <p style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #c2a24a;">Walk-in interview</p>
+            <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #ded8c9;">[LOT NO.], Publika Shopping Gallery,<br>1 Jalan Dutamas 1, Solaris Dutamas,<br>50480 Kuala Lumpur</p>
+            <p style="margin: 4px 0 0; font-size: 16px; color: #a9a184;">Daily, 11am &ndash; 6pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1080,"height":2700}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>
