@@ -183,11 +183,11 @@ export default function InteriorPreview() {
     <section
       ref={root}
       aria-labelledby="interior-heading"
-      className="relative border-t border-border/60"
+      className="home-dark relative border-t border-border/60 bg-background text-foreground"
     >
       <header className="mx-auto w-full max-w-2xl px-6 pb-14 pt-24 text-center sm:pb-16 sm:pt-32">
         <p className="text-[0.68rem] uppercase tracking-[0.32em] text-accent-bright">
-          A first look
+          Step inside
         </p>
         <h2
           id="interior-heading"
@@ -196,8 +196,8 @@ export default function InteriorPreview() {
           Inside the bistro
         </h2>
         <p className="mx-auto mt-5 max-w-md text-balance text-sm leading-relaxed text-muted sm:text-base">
-          Mosaic arches, brass lanterns and deep green banquettes — a taste of
-          the room we&apos;re building for you.
+          Mosaic arches, brass lanterns and deep green banquettes — a room made
+          for long dinners and big tables.
         </p>
       </header>
 
@@ -284,7 +284,7 @@ export default function InteriorPreview() {
       </div>
 
       <p className="mx-auto w-full max-w-2xl px-6 pb-24 pt-14 text-center text-[0.7rem] leading-relaxed text-muted/70 sm:pb-32">
-        Artist&apos;s impressions — the finished space may differ.
+        Artist&apos;s impressions of the dining room.
         <br className="sm:hidden" />
         <span className="sm:ml-1">Interior design by Aaron Designs.</span>
       </p>

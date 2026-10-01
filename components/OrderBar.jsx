@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Minus, Plus, Trash2, X } from "lucide-react";
@@ -18,12 +18,25 @@ const money = (value) => value.toFixed(2);
 
 const ORDER_TYPES = ["Dine-in", "Takeaway", "Delivery"];
 
+/*
+ * Anything outside the bar can open the review sheet by dispatching this on
+ * window — the home page header's basket button does. An event rather than
+ * shared state so the bar stays the only owner of whether its sheet is open.
+ */
+export const OPEN_ORDER_EVENT = "lazeez:open-order";
+
 export default function OrderBar() {
   const { lines, details, count, total, whatsappHref } = useOrder();
   const [open, setOpen] = useState(false);
   const bar = useRef(null);
 
   const hasOrder = count > 0;
+
+  useEffect(() => {
+    const open = () => setOpen(true);
+    window.addEventListener(OPEN_ORDER_EVENT, open);
+    return () => window.removeEventListener(OPEN_ORDER_EVENT, open);
+  }, []);
 
   useGSAP(
     () => {

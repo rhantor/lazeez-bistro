@@ -20,6 +20,11 @@
   --muted: #a9a184;
   --accent: #9b8235;
   --accent-bright: #c2a24a;
+  /* The main call-to-action fill. Gold on the dark pages; the light home
+     page re-points it to deep green, since cream type on gold is too faint. */
+  --primary: #9b8235;
+  --primary-hover: #c2a24a;
+  --primary-foreground: #00190f;
 
   /*
    * Printed-menu palette, sampled from the menu artwork. The print runs cream
@@ -42,6 +47,9 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-bright: var(--accent-bright);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
   --color-surface: var(--surface);
   --color-surface-hover: var(--surface-hover);
   --color-border: var(--border);
@@ -55,6 +63,7 @@
   --color-menu-ink: var(--menu-ink);
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
+  --font-arabic: var(--font-amiri);
 }
 
 /*
@@ -83,12 +92,14 @@ html {
   }
 }
 
-/* The home page header is fixed, so the section its nav jumps to has to stop
-   clear of the bar rather than underneath it. Targeted at that one anchor
+/* The home page header is fixed, so the sections its nav jumps to have to
+   stop clear of the bar rather than underneath it. Targeted at those anchors
    rather than every [id] on the site: /menu positions its own scroll target
    and should keep doing so. */
+#dishes,
+#kitchens,
 #visit {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 4.5rem;
 }
 
 body {
@@ -228,4 +239,125 @@ body {
   .depth {
     transform: none;
   }
+}
+
+/* ---------------------------------------------------------------------------
+ * Home page
+ * ------------------------------------------------------------------------- */
+
+/* The dot inside the scroll cue drops and fades, over and over. */
+.scroll-dot {
+  animation: scroll-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* Letters drawn as a gold outline — the ribbon's alternate words and the
+   footer's wordmark. */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--accent-bright) 70%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-dot {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Home page — light theme
+ *
+ * The landing page runs on the grand-opening flyer's palette: a warm cream
+ * ground (#F7F1E6) under the gold Lazeez pattern, deep green type, gold
+ * detailing. Like .menu-light, this re-points the theme tokens for one
+ * subtree, so every `bg-background`, `text-muted`, `border-border` inside
+ * resolves to the cream set without the components changing.
+ * ------------------------------------------------------------------------- */
+.home-light {
+  --background: #f7f1e6;
+  --surface: #fffbf3;
+  --surface-hover: #f1e8d8;
+  --border: rgba(15, 61, 36, 0.13);
+  --foreground: #0f3d24;
+  --muted: #6b6452;
+  --accent: #b39445;
+  /* Gold dark enough to read as text on cream (eyebrows, prices, the
+     italic accent word). */
+  --accent-bright: #86681c;
+  /* The flyer's frame brown stands in for pale sand, which vanishes on
+     cream. */
+  --brand-sand: #8f7150;
+  --primary: #0f3d24;
+  --primary-hover: #1f6b3a;
+  --primary-foreground: #f7f1e6;
+}
+
+/*
+ * Deep-green bands inside the light page (the ribbon, the kitchens, the
+ * footer) — the same inversion the printed menu uses for its Malaysian page.
+ * Brand green rather than the old near-black night, so it reads as green.
+ */
+.home-light .home-dark {
+  --background: #0f3d24;
+  --surface: #154a2d;
+  --surface-hover: #1b5634;
+  --border: rgba(243, 235, 221, 0.14);
+  --foreground: #f7f1e6;
+  --muted: #c8c0a6;
+  --accent: #c9a24a;
+  --accent-bright: #dcbb62;
+  --brand-sand: #d8cca5;
+  --primary: #c9a24a;
+  --primary-hover: #dcbb62;
+  --primary-foreground: #0f3d24;
+}
+
+/* The page behind an overscroll bounce should match, not flash dark. */
+html:has(.home-light) body {
+  background: #f7f1e6;
+}
+
+/* The flyer's gold pattern, as a texture layer. Opacity goes on the element;
+   the tile ships at full strength. */
+.lazeez-pattern {
+  background-image: url("/pattern-lazeez.svg");
+  background-repeat: repeat;
+  background-size: 96px 96px;
+}
+
+/* On cream the lantern glow is a soft warm wash, not a green pool. */
+.home-light .ambient-glow {
+  background:
+    radial-gradient(
+      60% 50% at 50% 0%,
+      color-mix(in oklab, #e8c979 30%, transparent) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 45% at 85% 70%,
+      color-mix(in oklab, #fffbf3 90%, transparent) 0%,
+      transparent 70%
+    );
+}
+
+.home-light .home-dark .ambient-glow {
+  background: radial-gradient(
+    55% 45% at 50% 0%,
+    color-mix(in oklab, var(--brand-gold) 25%, transparent) 0%,
+    transparent 70%
+  );
 }
