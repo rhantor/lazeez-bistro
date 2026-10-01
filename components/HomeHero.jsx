@@ -11,6 +11,7 @@ import {
   prefersReducedMotion,
   revealAll,
   playWhenVisible,
+  canHover,
 } from "@/lib/useIntroTimeline";
 import HeroPanel from "@/components/HeroPanel";
 
@@ -75,21 +76,20 @@ export default function HomeHero() {
         )
         .to(".js-cue", { opacity: 1, duration: 0.6 }, "-=0.6");
 
-      gsap.to(".js-glow", {
-        opacity: 0.85,
-        scale: 1.09,
-        duration: 7,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
+      if (canHover()) {
+        gsap.to(".js-glow", {
+          opacity: 0.85,
+          scale: 1.09,
+          duration: 7,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+      }
 
       // Pointer parallax is a mouse affordance; on touch it would only fire
       // once per tap and read as a glitch.
-      const canHover = window.matchMedia(
-        "(hover: hover) and (pointer: fine)",
-      ).matches;
-      if (canHover) {
+      if (canHover()) {
         const to = (target, prop) =>
           gsap.quickTo(target, prop, { duration: 1.1, ease: "power3.out" });
         parallax.current = {
@@ -139,11 +139,11 @@ export default function HomeHero() {
       {/* A warm pool of light behind the logo panel. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[-10%] top-[15%] h-[40rem] w-[40rem] rounded-full bg-[#fffbf3] blur-[120px]"
+        className="pointer-events-none absolute right-[-10%] top-[15%] h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(closest-side,#fffbf3,transparent)]"
       />
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-5 pb-20 pt-28 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-10 lg:pb-16">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-          <p className="js-badge gsap-hidden inline-flex items-center gap-2.5 rounded-full border border-accent/35 bg-surface/70 px-4 py-1.5 text-[0.68rem] uppercase tracking-[0.2em] text-brand-sand backdrop-blur-sm">
+          <p className="js-badge gsap-hidden inline-flex items-center gap-2.5 rounded-full border border-accent/35 bg-surface/70 px-4 py-1.5 text-[0.68rem] uppercase tracking-[0.2em] text-brand-sand">
             <span className="relative flex h-2 w-2">
               {/* The ping is CSS, not GSAP — a two-keyframe loop with no
                   timeline to coordinate with, and Tailwind already ships it. */}
@@ -214,7 +214,7 @@ export default function HomeHero() {
             </Link>
           </div>
 
-          <dl className="js-stats gsap-hidden mt-10 grid w-full max-w-md grid-cols-3 divide-x divide-border/70 rounded-2xl border border-border/70 bg-surface/40 backdrop-blur-sm">
+          <dl className="js-stats gsap-hidden mt-10 grid w-full max-w-md grid-cols-3 divide-x divide-border/70 rounded-2xl border border-border/70 bg-surface/40">
             {STATS.map((stat) => (
               // dt before dd, as a <dl> requires; flex-col-reverse puts the
               // figure on top where the eye wants it.

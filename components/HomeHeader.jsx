@@ -123,7 +123,7 @@ export default function HomeHeader() {
           visible ? "translate-y-0" : "-translate-y-full"
         } ${
           lifted || menuOpen
-            ? "border-b border-border/70 bg-background/80 backdrop-blur-xl"
+            ? "border-b border-border/70 bg-background/95 md:bg-background/80 md:backdrop-blur-xl"
             : "border-b border-transparent"
         }`}
       >
@@ -223,7 +223,7 @@ export default function HomeHeader() {
         id="mobile-menu"
         aria-hidden={!menuOpen}
         inert={!menuOpen}
-        className={`fixed inset-0 z-40 flex flex-col bg-background/95 px-6 pb-10 pt-24 backdrop-blur-xl transition-opacity duration-400 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col bg-background px-6 pb-10 pt-24 transition-opacity duration-400 md:hidden ${
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >

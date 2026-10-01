@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { MapPin, Clock, Phone, Mail, ArrowUpRight, Navigation, Star } from "lucide-react";
 import { WhatsAppIcon } from "@/components/BrandIcons";
 import { site, visit, whatsappNumber, socialLinks } from "@/lib/site";
-import { prefersReducedMotion, revealAll } from "@/lib/useIntroTimeline";
+import { prefersReducedMotion, revealAll, canHover } from "@/lib/useIntroTimeline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,14 +81,16 @@ export default function VisitSection() {
         scrollTrigger: { trigger: ".js-map", start: "top 85%", once: true },
       });
 
-      gsap.to(".js-glow", {
-        opacity: 0.7,
-        scale: 1.06,
-        duration: 7,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
+      if (canHover()) {
+        gsap.to(".js-glow", {
+          opacity: 0.7,
+          scale: 1.06,
+          duration: 7,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+      }
     },
     { scope: root },
   );
@@ -123,7 +125,7 @@ export default function VisitSection() {
 
         <div className="mt-14 grid gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-            <div className="js-reveal gsap-hidden rounded-3xl border border-border bg-surface/70 p-6 backdrop-blur-sm sm:p-7">
+            <div className="js-reveal gsap-hidden rounded-3xl border border-border bg-surface/70 p-6 sm:p-7">
               <CardLabel icon={MapPin}>Where</CardLabel>
               <address className="mt-5 not-italic text-base leading-relaxed text-foreground/90">
                 {visit.addressLines.map((line) => (
@@ -148,7 +150,7 @@ export default function VisitSection() {
               </a>
             </div>
 
-            <div className="js-reveal gsap-hidden rounded-3xl border border-border bg-surface/70 p-6 backdrop-blur-sm sm:p-7">
+            <div className="js-reveal gsap-hidden rounded-3xl border border-border bg-surface/70 p-6 sm:p-7">
               <CardLabel icon={Clock}>When</CardLabel>
               {visit.hours.length ? (
                 <dl className="mt-5 space-y-3.5 text-sm sm:text-base">
@@ -188,7 +190,7 @@ export default function VisitSection() {
               )}
             </div>
 
-            <div className="js-reveal gsap-hidden rounded-3xl border border-border bg-surface/70 p-2 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
+            <div className="js-reveal gsap-hidden rounded-3xl border border-border bg-surface/70 p-2 sm:col-span-2 lg:col-span-1">
               <ul className="divide-y divide-border/60">
                 {CONTACTS.map((contact) => {
                   const Icon = contact.icon;

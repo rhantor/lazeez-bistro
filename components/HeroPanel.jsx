@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { site } from "@/lib/site";
 import { FRAME } from "@/lib/frame";
-import { prefersReducedMotion } from "@/lib/useIntroTimeline";
+import { prefersReducedMotion, canHover } from "@/lib/useIntroTimeline";
 
 /*
  * The frame drawing, in the PDF's units. PAD leaves room round the outer
@@ -109,6 +109,10 @@ export default function HeroPanel() {
         .to(".js-body", { opacity: 1, duration: 1.1, ease: "power2.out" }, 1.1)
         .to(".js-logo", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, 1.5);
 
+      // Everything below is desktop-only: the sheen repaints the frame's SVG
+      // filters on every frame it moves, which a phone feels while scrolling.
+      if (!canHover()) return;
+
       // A band of light that sweeps the panel now and then.
       gsap.fromTo(
         ".js-sheen",
@@ -116,14 +120,13 @@ export default function HeroPanel() {
         { x: VB_W * 1.2, duration: 2.4, ease: "power2.inOut", repeat: -1, repeatDelay: 5, delay: 3.2 },
       );
 
-      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        const to = (target, prop, duration = 1) =>
-          gsap.quickTo(target, prop, { duration, ease: "power3.out" });
-        tilt.current = {
-          rotX: to(".js-tilt", "rotationX"),
-          rotY: to(".js-tilt", "rotationY"),
-        };
-      }
+      // The tilt follows the pointer.
+      const to = (target, prop) =>
+        gsap.quickTo(target, prop, { duration: 1, ease: "power3.out" });
+      tilt.current = {
+        rotX: to(".js-tilt", "rotationX"),
+        rotY: to(".js-tilt", "rotationY"),
+      };
     },
     { scope: root },
   );

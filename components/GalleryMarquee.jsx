@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRight } from "lucide-react";
 import { galleryRows, socialLinks } from "@/lib/site";
-import { prefersReducedMotion, revealAll } from "@/lib/useIntroTimeline";
+import { prefersReducedMotion, revealAll, canHover } from "@/lib/useIntroTimeline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +42,10 @@ export default function GalleryMarquee() {
         ease: "power3.out",
         scrollTrigger: { trigger: root.current, start: "top 80%", once: true },
       });
+
+      // On touch the rows are swiped by hand instead (see the row classes):
+      // two endlessly moving strips of photos are hard work for a phone.
+      if (!canHover()) return undefined;
 
       const cleanups = gsap.utils.toArray(".js-row").map((row, i) => {
         // Row one travels left, row two right.
@@ -120,12 +124,13 @@ export default function GalleryMarquee() {
 
       <div className="js-reveal gsap-hidden mt-14 space-y-4 sm:space-y-5">
         {galleryRows.map((row, r) => (
-          // The tween drives each row; under reduced motion there is no tween,
-          // so the row scrolls sideways by hand instead. The mask fades the
-          // tiles in and out at the edges.
+          // With a mouse, the tween drives each row. On touch, or under
+          // reduced motion, there is no tween and the row is swiped by hand,
+          // snapping tile by tile. The mask fades tiles in and out at the
+          // edges.
           <div
             key={r}
-            className="relative overflow-x-auto [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] [scrollbar-width:none] motion-safe:overflow-x-hidden [&::-webkit-scrollbar]:hidden"
+            className="relative snap-x snap-mandatory overflow-x-auto px-5 [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)] [scrollbar-width:none] [@media(hover:hover)_and_(pointer:fine)]:motion-safe:snap-none [@media(hover:hover)_and_(pointer:fine)]:motion-safe:overflow-x-hidden [@media(hover:hover)_and_(pointer:fine)]:motion-safe:px-0 [&::-webkit-scrollbar]:hidden"
           >
             <div className="js-row flex w-max gap-4 sm:gap-5">
               {[0, 1].map((copy) =>
@@ -133,7 +138,7 @@ export default function GalleryMarquee() {
                   <figure
                     key={`${copy}-${tile.src}`}
                     aria-hidden={copy === 1 ? "true" : undefined}
-                    className={`group relative isolate h-56 shrink-0 overflow-hidden rounded-[1.75rem] border border-accent/30 bg-surface sm:h-72 ${
+                    className={`group relative isolate h-56 shrink-0 snap-start overflow-hidden rounded-[1.75rem] border border-accent/30 bg-surface sm:h-72 ${
                       tile.wide ? "aspect-[4/3]" : "aspect-[3/4]"
                     }`}
                   >
@@ -144,7 +149,7 @@ export default function GalleryMarquee() {
                       sizes="(min-width: 640px) 384px, 300px"
                       // As exported: see the note in SignatureDishes.
                       unoptimized
-                      className="object-cover mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                     <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-surface via-surface/85 to-transparent px-4 pb-3 pt-10 text-xs text-foreground transition-transform duration-500 group-hover:translate-y-0">
                       {tile.alt}

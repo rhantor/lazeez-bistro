@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { prefersReducedMotion } from "@/lib/useIntroTimeline";
+import { prefersReducedMotion, canHover } from "@/lib/useIntroTimeline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +45,10 @@ export default function CuisineRibbon() {
         ease: "none",
         repeat: -1,
       });
+
+      // On touch the band simply cruises: the scroll-speed effect below makes
+      // new tweens on every scroll event, which a phone pays for in frames.
+      if (!canHover()) return;
 
       // Scroll speed feeds the band: a flick of the wheel sends it racing, and
       // it eases back to its cruising pace once the page settles. Scrolling
