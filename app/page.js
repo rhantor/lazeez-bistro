@@ -11,11 +11,8 @@ import OrderBar from "@/components/OrderBar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { restaurantJsonLd, jsonLdScript } from "@/lib/structuredData";
 
-// The interior renders are Aaron Designs artwork. public/interior/ is still
-// gitignored, so the JPEGs render locally but do NOT ship to Vercel - the
-// section will come up empty on the deployed site until that ignore rule is
-// dropped and the files are committed, which is also the point at which
-// permission to publish them needs to be confirmed.
+// The "Inside the bistro" renders (Aaron Designs artwork) live in
+// public/interior/ and are committed, so the section ships to production.
 const SHOW_INTERIOR = true;
 
 export default function Home() {
